@@ -119,7 +119,7 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    padding: var(--space-32) 0 var(--space-20);
+    padding: 0;
     overflow: hidden;
     background: var(--gradient-hero);
 }

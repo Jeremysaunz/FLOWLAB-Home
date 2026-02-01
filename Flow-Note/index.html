@@ -94,36 +94,32 @@
                     Jeremy 코치의 성장 인사이트와 아이디어 아카이브입니다.
                 </p>
 
-                <!-- Subscribe Form -->
+                <!-- Subscribe CTA (Substack 연결) -->
                 <div class="subscribe-container">
-                    <form class="subscribe-form" id="subscribeForm">
-                        <div class="form-group">
-                            <div class="input-wrapper">
-                                <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2">
-                                    <path
-                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                                    <polyline points="22,6 12,13 2,6" />
-                                </svg>
-                                <input type="email" id="email" name="email" placeholder="이메일 주소를 입력하세요" required
-                                    autocomplete="email">
-                                <div class="input-glow"></div>
-                            </div>
-                            <button type="submit" class="btn btn-primary subscribe-btn">
-                                <span>구독하기</span>
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2">
-                                    <path d="M5 12h14M12 5l7 7-7 7" />
-                                </svg>
-                            </button>
-                        </div>
-                    </form>
+                    <div class="subscribe-cta">
+                        <a href="#" id="subscribeBtn" class="btn btn-primary btn-lg subscribe-btn" target="_blank"
+                            rel="noopener">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <polyline points="22,6 12,13 2,6" />
+                            </svg>
+                            <span>무료로 구독하기</span>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                        <a href="#" id="archiveBtn" class="btn btn-secondary btn-lg" target="_blank" rel="noopener">
+                            아카이브 보기
+                        </a>
+                    </div>
                     <p class="subscribe-note">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2">
                             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                         </svg>
-                        언제든 구독 취소 가능 · 스팸 없음 · 매주 인사이트 전달
+                        Substack에서 발행 · 언제든 구독 취소 가능 · 매주 인사이트 전달
                     </p>
                 </div>
 
@@ -169,7 +165,7 @@
 
             <div class="notes-grid">
                 <!-- Note Card 1 -->
-                <article class="note-card featured" data-animate data-delay="100">
+                <a href="#" class="note-card featured" data-animate data-delay="100" data-note-link>
                     <div class="note-meta">
                         <span class="note-category">성장</span>
                         <span class="note-date">2026.01.28</span>
@@ -183,12 +179,12 @@
                             <span class="tag">방향성</span>
                             <span class="tag">자기이해</span>
                         </div>
-                        <span class="read-time">3분 읽기</span>
+                        <span class="read-more">읽기 →</span>
                     </div>
-                </article>
+                </a>
 
                 <!-- Note Card 2 -->
-                <article class="note-card" data-animate data-delay="200">
+                <a href="#" class="note-card" data-animate data-delay="200" data-note-link>
                     <div class="note-meta">
                         <span class="note-category">AI</span>
                         <span class="note-date">2026.01.21</span>
@@ -202,12 +198,12 @@
                             <span class="tag">AI활용</span>
                             <span class="tag">생산성</span>
                         </div>
-                        <span class="read-time">4분 읽기</span>
+                        <span class="read-more">읽기 →</span>
                     </div>
-                </article>
+                </a>
 
                 <!-- Note Card 3 -->
-                <article class="note-card" data-animate data-delay="300">
+                <a href="#" class="note-card" data-animate data-delay="300" data-note-link>
                     <div class="note-meta">
                         <span class="note-category">기록</span>
                         <span class="note-date">2026.01.14</span>
@@ -221,12 +217,12 @@
                             <span class="tag">기록습관</span>
                             <span class="tag">노션</span>
                         </div>
-                        <span class="read-time">3분 읽기</span>
+                        <span class="read-more">읽기 →</span>
                     </div>
-                </article>
+                </a>
 
                 <!-- Note Card 4 -->
-                <article class="note-card" data-animate data-delay="400">
+                <a href="#" class="note-card" data-animate data-delay="400" data-note-link>
                     <div class="note-meta">
                         <span class="note-category">코칭</span>
                         <span class="note-date">2026.01.07</span>
@@ -240,12 +236,12 @@
                             <span class="tag">마인드셋</span>
                             <span class="tag">회복</span>
                         </div>
-                        <span class="read-time">5분 읽기</span>
+                        <span class="read-more">읽기 →</span>
                     </div>
-                </article>
+                </a>
 
                 <!-- Note Card 5 -->
-                <article class="note-card" data-animate data-delay="500">
+                <a href="#" class="note-card" data-animate data-delay="500" data-note-link>
                     <div class="note-meta">
                         <span class="note-category">생산성</span>
                         <span class="note-date">2025.12.30</span>
@@ -259,12 +255,12 @@
                             <span class="tag">시스템</span>
                             <span class="tag">루틴</span>
                         </div>
-                        <span class="read-time">4분 읽기</span>
+                        <span class="read-more">읽기 →</span>
                     </div>
-                </article>
+                </a>
 
                 <!-- Note Card 6 -->
-                <article class="note-card" data-animate data-delay="600">
+                <a href="#" class="note-card" data-animate data-delay="600" data-note-link>
                     <div class="note-meta">
                         <span class="note-category">독서</span>
                         <span class="note-date">2025.12.23</span>
@@ -278,9 +274,21 @@
                             <span class="tag">독서법</span>
                             <span class="tag">아웃풋</span>
                         </div>
-                        <span class="read-time">3분 읽기</span>
+                        <span class="read-more">읽기 →</span>
                     </div>
-                </article>
+                </a>
+            </div>
+
+            <!-- View All Button -->
+            <div class="section-cta" data-animate data-delay="700">
+                <a href="#" id="viewAllBtn" class="btn btn-secondary" target="_blank" rel="noopener">
+                    Substack에서 모든 글 보기
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                        <polyline points="15 3 21 3 21 9" />
+                        <line x1="10" y1="14" x2="21" y2="3" />
+                    </svg>
+                </a>
             </div>
         </div>
     </section>
@@ -292,51 +300,43 @@
                 <span class="section-label">Topics</span>
                 <h2 class="section-title">주제별 탐색</h2>
                 <p class="section-subtitle">
-                    관심 있는 주제를 선택해 관련 노트를 모아보세요
+                    Substack에서 다양한 주제의 인사이트를 만나보세요
                 </p>
             </header>
 
             <div class="topics-grid" data-animate data-delay="100">
-                <button class="topic-pill active">
+                <a href="#" class="topic-pill" data-topic-link>
                     <span class="topic-icon">🌱</span>
                     <span class="topic-name">성장</span>
-                    <span class="topic-count">8</span>
-                </button>
-                <button class="topic-pill">
+                </a>
+                <a href="#" class="topic-pill" data-topic-link>
                     <span class="topic-icon">🤖</span>
                     <span class="topic-name">AI</span>
-                    <span class="topic-count">6</span>
-                </button>
-                <button class="topic-pill">
+                </a>
+                <a href="#" class="topic-pill" data-topic-link>
                     <span class="topic-icon">💬</span>
                     <span class="topic-name">코칭</span>
-                    <span class="topic-count">5</span>
-                </button>
-                <button class="topic-pill">
+                </a>
+                <a href="#" class="topic-pill" data-topic-link>
                     <span class="topic-icon">📝</span>
                     <span class="topic-name">기록</span>
-                    <span class="topic-count">4</span>
-                </button>
-                <button class="topic-pill">
+                </a>
+                <a href="#" class="topic-pill" data-topic-link>
                     <span class="topic-icon">⚡</span>
                     <span class="topic-name">생산성</span>
-                    <span class="topic-count">5</span>
-                </button>
-                <button class="topic-pill">
+                </a>
+                <a href="#" class="topic-pill" data-topic-link>
                     <span class="topic-icon">📚</span>
                     <span class="topic-name">독서</span>
-                    <span class="topic-count">3</span>
-                </button>
-                <button class="topic-pill">
+                </a>
+                <a href="#" class="topic-pill" data-topic-link>
                     <span class="topic-icon">🎯</span>
                     <span class="topic-name">목표설정</span>
-                    <span class="topic-count">4</span>
-                </button>
-                <button class="topic-pill">
+                </a>
+                <a href="#" class="topic-pill" data-topic-link>
                     <span class="topic-icon">🧠</span>
                     <span class="topic-name">마인드셋</span>
-                    <span class="topic-count">6</span>
-                </button>
+                </a>
             </div>
         </div>
     </section>
@@ -361,7 +361,7 @@
                         성장, 코칭, AI, 생산성에 대한 깊이 있는 이야기들이 축적됩니다.
                     </p>
                     <p>
-                        구독하시면 매주 새로운 노트가 이메일로 전달되며,
+                        <strong>Substack</strong>에서 구독하시면 매주 새로운 노트가 이메일로 전달되며,
                         당신만의 성장 여정에 영감을 더해드립니다.
                     </p>
                 </div>
@@ -382,31 +382,25 @@
                 <h2 class="cta-title">매주 성장의 인사이트를 받아보세요</h2>
                 <p class="cta-subtitle">
                     Jeremy 코치의 생각과 아이디어가 당신의 메일함으로 찾아갑니다.<br>
-                    구독하고 함께 성장해요.
+                    Substack에서 구독하고 함께 성장해요.
                 </p>
 
-                <!-- Subscribe Form (Bottom) -->
-                <form class="subscribe-form subscribe-form-lg" id="subscribeFormBottom">
-                    <div class="form-group">
-                        <div class="input-wrapper">
-                            <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                                <polyline points="22,6 12,13 2,6" />
-                            </svg>
-                            <input type="email" id="emailBottom" name="email" placeholder="이메일을 입력하세요" required
-                                autocomplete="email">
-                            <div class="input-glow"></div>
-                        </div>
-                        <button type="submit" class="btn btn-primary subscribe-btn">
-                            <span>무료 구독</span>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path d="M5 12h14M12 5l7 7-7 7" />
-                            </svg>
-                        </button>
-                    </div>
-                </form>
+                <!-- Subscribe CTA (Bottom) -->
+                <div class="subscribe-cta-bottom">
+                    <a href="#" id="subscribeBtnBottom" class="btn btn-primary btn-lg subscribe-btn" target="_blank"
+                        rel="noopener">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <polyline points="22,6 12,13 2,6" />
+                        </svg>
+                        <span>Substack에서 무료 구독</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -452,38 +446,54 @@
     <!-- Scripts -->
     <script src="../js/main.js"></script>
     <script>
-        // Subscribe Form Handler
-        document.querySelectorAll('.subscribe-form').forEach(form => {
-            form.addEventListener('submit', function (e) {
-                e.preventDefault();
-                const email = this.querySelector('input[type="email"]').value;
+        // ============================================
+        // Substack 설정 - 여기만 수정하면 됩니다!
+        // ============================================
+        const SUBSTACK_CONFIG = {
+            // Substack URL
+            baseUrl: 'https://jeremyflow.substack.com',
 
-                // 구독 성공 피드백
-                const btn = this.querySelector('.subscribe-btn');
-                const originalContent = btn.innerHTML;
+            // 구독 페이지 URL
+            get subscribeUrl() {
+                return `${this.baseUrl}/subscribe`;
+            },
 
-                btn.innerHTML = `
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="20 6 9 17 4 12"/>
-          </svg>
-          <span>구독 완료!</span>
-        `;
-                btn.style.background = 'linear-gradient(135deg, #00f5d4, #7b2cbf)';
+            // 아카이브 페이지 URL
+            get archiveUrl() {
+                return `${this.baseUrl}/archive`;
+            }
+        };
 
-                // 입력 필드 초기화
-                this.querySelector('input[type="email"]').value = '';
+        // ============================================
+        // 모든 Substack 링크 자동 설정
+        // ============================================
+        document.addEventListener('DOMContentLoaded', function () {
+            // 구독 버튼들
+            document.getElementById('subscribeBtn').href = SUBSTACK_CONFIG.subscribeUrl;
+            document.getElementById('subscribeBtnBottom').href = SUBSTACK_CONFIG.subscribeUrl;
 
-                // 3초 후 원래대로 복원
-                setTimeout(() => {
-                    btn.innerHTML = originalContent;
-                    btn.style.background = '';
-                }, 3000);
+            // 아카이브 버튼
+            document.getElementById('archiveBtn').href = SUBSTACK_CONFIG.archiveUrl;
+            document.getElementById('viewAllBtn').href = SUBSTACK_CONFIG.archiveUrl;
 
-                console.log('구독 신청:', email);
+            // 노트 카드 링크 (클릭 시 아카이브로 이동)
+            document.querySelectorAll('[data-note-link]').forEach(card => {
+                card.href = SUBSTACK_CONFIG.archiveUrl;
+                card.target = '_blank';
+                card.rel = 'noopener';
+            });
+
+            // 토픽 링크 (클릭 시 아카이브로 이동)
+            document.querySelectorAll('[data-topic-link]').forEach(link => {
+                link.href = SUBSTACK_CONFIG.archiveUrl;
+                link.target = '_blank';
+                link.rel = 'noopener';
             });
         });
 
+        // ============================================
         // Scroll animation for elements
+        // ============================================
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'

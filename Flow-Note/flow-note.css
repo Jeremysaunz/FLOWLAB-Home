@@ -177,94 +177,37 @@
 }
 
 /* ========================================
-   Subscribe Form
+   Subscribe CTA (Substack 연결)
    ======================================== */
 .subscribe-container {
     opacity: 0;
     animation: fadeInUp 0.8s ease 0.8s forwards;
 }
 
-.subscribe-form {
-    max-width: 500px;
-    margin: 0 auto var(--space-4);
-}
-
-.subscribe-form .form-group {
+.subscribe-cta {
     display: flex;
-    gap: var(--space-3);
-    align-items: stretch;
+    gap: var(--space-4);
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: var(--space-4);
 }
 
-.input-wrapper {
-    flex: 1;
-    position: relative;
+.subscribe-cta .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
 }
 
-.input-wrapper input {
-    width: 100%;
-    padding: var(--space-4) var(--space-4) var(--space-4) var(--space-12);
-    font-family: var(--font-body);
-    font-size: var(--text-base);
-    color: var(--text-primary);
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--glass-border);
-    border-radius: var(--radius-xl);
-    transition: all var(--transition-base);
-    outline: none;
+.subscribe-cta .subscribe-btn {
+    padding: var(--space-4) var(--space-8);
 }
 
-.input-wrapper input::placeholder {
-    color: var(--text-muted);
-}
-
-.input-wrapper input:focus {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: var(--neon-cyan);
-    box-shadow: 0 0 0 3px rgba(0, 245, 212, 0.1), var(--glow-cyan);
-}
-
-.input-icon {
-    position: absolute;
-    left: var(--space-4);
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--text-muted);
-    pointer-events: none;
-    transition: color var(--transition-fast);
-}
-
-.input-wrapper input:focus+.input-icon,
-.input-wrapper:has(input:focus) .input-icon {
-    color: var(--neon-cyan);
-}
-
-.input-glow {
-    position: absolute;
-    inset: -2px;
-    border-radius: var(--radius-xl);
-    background: var(--gradient-glow);
-    opacity: 0;
-    filter: blur(10px);
-    transition: opacity var(--transition-base);
-    pointer-events: none;
-    z-index: -1;
-}
-
-.input-wrapper:has(input:focus) .input-glow {
-    opacity: 0.3;
-}
-
-.subscribe-btn {
-    white-space: nowrap;
-    padding: var(--space-4) var(--space-6);
-}
-
-.subscribe-btn svg {
+.subscribe-cta .subscribe-btn svg:last-child {
     transition: transform var(--transition-fast);
 }
 
-.subscribe-btn:hover svg {
-    transform: translateX(3px);
+.subscribe-cta .subscribe-btn:hover svg:last-child {
+    transform: translateX(4px);
 }
 
 .subscribe-note {
@@ -279,6 +222,27 @@
 .subscribe-note svg {
     color: var(--neon-cyan);
 }
+
+/* Subscribe CTA Bottom */
+.subscribe-cta-bottom {
+    display: flex;
+    justify-content: center;
+}
+
+.subscribe-cta-bottom .subscribe-btn {
+    padding: var(--space-5) var(--space-10);
+    font-size: var(--text-lg);
+}
+
+.subscribe-cta-bottom .subscribe-btn svg:last-child {
+    transition: transform var(--transition-fast);
+}
+
+.subscribe-cta-bottom .subscribe-btn:hover svg:last-child {
+    transform: translateX(4px);
+}
+
+
 
 /* ========================================
    Hero Stats
@@ -473,6 +437,7 @@
     margin-bottom: var(--space-4);
     display: -webkit-box;
     -webkit-line-clamp: 3;
+    line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
@@ -499,9 +464,50 @@
     border-radius: var(--radius-sm);
 }
 
-.read-time {
-    font-size: var(--text-xs);
-    color: var(--text-muted);
+.read-more {
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--neon-cyan);
+    transition: all var(--transition-fast);
+}
+
+.note-card:hover .read-more {
+    color: var(--neon-purple-light);
+}
+
+/* Note Card as Link - 링크 스타일 리셋 */
+a.note-card {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+/* Section CTA */
+.section-cta {
+    text-align: center;
+    margin-top: var(--space-12);
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.section-cta.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.6s ease;
+}
+
+.section-cta .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.section-cta .btn svg {
+    transition: transform var(--transition-fast);
+}
+
+.section-cta .btn:hover svg {
+    transform: translate(3px, -3px);
 }
 
 /* ========================================

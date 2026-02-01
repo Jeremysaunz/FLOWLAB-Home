@@ -1,18 +1,16 @@
 /**
- * FlowLab Main JavaScript
+ * FlowLab Main JavaScript - Cosmic Flow Edition
  * 공통 기능 및 인터랙션
  * ========================================
  */
 
 // DOM 로드 완료 후 실행
 document.addEventListener('DOMContentLoaded', () => {
-
   initNavbar();
   initMobileMenu();
   initScrollAnimations();
+  initParallaxEffect();
 });
-
-
 
 /**
  * 네비게이션 바 스크롤 효과
@@ -67,7 +65,7 @@ function initScrollAnimations() {
 
   const observerOptions = {
     root: null,
-    rootMargin: '0px 0px -100px 0px',
+    rootMargin: '0px 0px -80px 0px',
     threshold: 0.1
   };
 
@@ -91,6 +89,50 @@ function initScrollAnimations() {
     el.style.opacity = '0';
     observer.observe(el);
   });
+}
+
+/**
+ * Hero 배경 요소 Parallax 효과
+ */
+function initParallaxEffect() {
+  const meshOrbs = document.querySelectorAll('.mesh-orb');
+  const geoShapes = document.querySelectorAll('.geo-shape');
+
+  if (!meshOrbs.length && !geoShapes.length) return;
+
+  let mouseX = 0;
+  let mouseY = 0;
+  let currentX = 0;
+  let currentY = 0;
+
+  // 마우스 위치 추적
+  document.addEventListener('mousemove', (e) => {
+    mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+    mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+  });
+
+  // 부드러운 애니메이션 루프
+  function animate() {
+    // 이징 적용
+    currentX += (mouseX - currentX) * 0.05;
+    currentY += (mouseY - currentY) * 0.05;
+
+    // Mesh Orbs에 적용 (다른 강도로)
+    meshOrbs.forEach((orb, index) => {
+      const factor = (index + 1) * 15;
+      orb.style.transform = `translate(${currentX * factor}px, ${currentY * factor}px)`;
+    });
+
+    // Geo Shapes에 적용
+    geoShapes.forEach((shape, index) => {
+      const factor = (index + 1) * 8;
+      shape.style.transform = `translate(${currentX * factor}px, ${currentY * factor}px)`;
+    });
+
+    requestAnimationFrame(animate);
+  }
+
+  animate();
 }
 
 /**

@@ -1,0 +1,811 @@
+/*
+ * Flow-Note Page Styles
+ * 아카이브 페이지 전용 스타일시트
+ * ========================================
+ */
+
+/* ========================================
+   Flow-Note Hero Section
+   ======================================== */
+.flownote-hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: var(--space-32) 0 var(--space-20);
+    overflow: hidden;
+    background: var(--gradient-hero);
+}
+
+.flownote-hero-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: var(--z-base);
+}
+
+/* Hero Badge */
+.flownote-hero .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    background: rgba(123, 44, 191, 0.15);
+    border: 1px solid rgba(123, 44, 191, 0.3);
+    border-radius: var(--radius-full);
+    padding: var(--space-2) var(--space-5);
+    margin-bottom: var(--space-8);
+    opacity: 0;
+    animation: fadeInUp 0.8s ease 0.1s forwards;
+}
+
+.badge-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--neon-purple-light);
+}
+
+.flownote-hero .hero-badge span:last-child {
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--neon-purple-light);
+    letter-spacing: 0.02em;
+}
+
+/* Flow-Note Title */
+.flownote-title {
+    font-family: var(--font-display);
+    font-size: var(--text-6xl);
+    font-weight: var(--font-bold);
+    line-height: 1.1;
+    margin-bottom: var(--space-6);
+    letter-spacing: -0.02em;
+}
+
+.flownote-title .title-line {
+    display: block;
+    opacity: 0;
+    animation: titleReveal 1s ease forwards;
+}
+
+.flownote-title .title-line:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.flownote-title .title-line:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.flownote-title .gradient-text {
+    background: linear-gradient(135deg, var(--neon-purple-light), var(--neon-cyan));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-shift 4s ease infinite;
+    background-size: 200% 200%;
+}
+
+/* Flow-Note Subtitle */
+.flownote-subtitle {
+    font-size: var(--text-xl);
+    color: var(--text-secondary);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-10);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease 0.6s forwards;
+}
+
+/* Ink Drop Animation */
+.ink-drops {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.ink-drop {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.6;
+    filter: blur(60px);
+    animation: inkFloat 12s ease-in-out infinite;
+}
+
+.ink-drop-1 {
+    width: 200px;
+    height: 200px;
+    background: var(--neon-purple);
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.ink-drop-2 {
+    width: 150px;
+    height: 150px;
+    background: var(--neon-cyan);
+    top: 60%;
+    right: 15%;
+    animation-delay: -3s;
+}
+
+.ink-drop-3 {
+    width: 180px;
+    height: 180px;
+    background: var(--neon-magenta);
+    bottom: 20%;
+    left: 30%;
+    animation-delay: -6s;
+}
+
+.ink-drop-4 {
+    width: 120px;
+    height: 120px;
+    background: var(--neon-blue-light);
+    top: 30%;
+    right: 25%;
+    animation-delay: -9s;
+}
+
+@keyframes inkFloat {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.4;
+    }
+
+    25% {
+        transform: translate(20px, -20px) scale(1.1);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: translate(-10px, 10px) scale(0.9);
+        opacity: 0.5;
+    }
+
+    75% {
+        transform: translate(15px, 15px) scale(1.05);
+        opacity: 0.55;
+    }
+}
+
+/* ========================================
+   Subscribe Form
+   ======================================== */
+.subscribe-container {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease 0.8s forwards;
+}
+
+.subscribe-form {
+    max-width: 500px;
+    margin: 0 auto var(--space-4);
+}
+
+.subscribe-form .form-group {
+    display: flex;
+    gap: var(--space-3);
+    align-items: stretch;
+}
+
+.input-wrapper {
+    flex: 1;
+    position: relative;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: var(--space-4) var(--space-4) var(--space-4) var(--space-12);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-xl);
+    transition: all var(--transition-base);
+    outline: none;
+}
+
+.input-wrapper input::placeholder {
+    color: var(--text-muted);
+}
+
+.input-wrapper input:focus {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 0 3px rgba(0, 245, 212, 0.1), var(--glow-cyan);
+}
+
+.input-icon {
+    position: absolute;
+    left: var(--space-4);
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    pointer-events: none;
+    transition: color var(--transition-fast);
+}
+
+.input-wrapper input:focus+.input-icon,
+.input-wrapper:has(input:focus) .input-icon {
+    color: var(--neon-cyan);
+}
+
+.input-glow {
+    position: absolute;
+    inset: -2px;
+    border-radius: var(--radius-xl);
+    background: var(--gradient-glow);
+    opacity: 0;
+    filter: blur(10px);
+    transition: opacity var(--transition-base);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.input-wrapper:has(input:focus) .input-glow {
+    opacity: 0.3;
+}
+
+.subscribe-btn {
+    white-space: nowrap;
+    padding: var(--space-4) var(--space-6);
+}
+
+.subscribe-btn svg {
+    transition: transform var(--transition-fast);
+}
+
+.subscribe-btn:hover svg {
+    transform: translateX(3px);
+}
+
+.subscribe-note {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+}
+
+.subscribe-note svg {
+    color: var(--neon-cyan);
+}
+
+/* ========================================
+   Hero Stats
+   ======================================== */
+.hero-stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-8);
+    margin-top: var(--space-12);
+    opacity: 0;
+    animation: fadeInUp 0.8s ease 1s forwards;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-family: var(--font-display);
+    font-size: var(--text-3xl);
+    font-weight: var(--font-bold);
+    color: var(--neon-cyan);
+    line-height: 1.2;
+}
+
+.stat-label {
+    font-size: var(--text-sm);
+    color: var(--text-tertiary);
+}
+
+.stat-divider {
+    width: 1px;
+    height: 40px;
+    background: var(--glass-border);
+}
+
+/* ========================================
+   Scroll Indicator
+   ======================================== */
+.scroll-indicator {
+    position: absolute;
+    bottom: var(--space-8);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+    animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    50% {
+        transform: translateX(-50%) translateY(8px);
+    }
+}
+
+/* ========================================
+   Featured Notes Section
+   ======================================== */
+.featured-notes {
+    padding: var(--space-24) 0;
+    background: var(--bg-secondary);
+    position: relative;
+}
+
+.featured-notes::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 80px;
+    background: linear-gradient(to bottom, transparent, var(--neon-purple-light), transparent);
+}
+
+/* Notes Grid */
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+}
+
+/* Note Card */
+.note-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-6);
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.note-card.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.6s ease;
+}
+
+.note-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--neon-purple-light), var(--neon-cyan), transparent);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+.note-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--glass-border-hover);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), var(--glow-purple);
+}
+
+.note-card:hover::before {
+    opacity: 1;
+}
+
+/* Featured Note Card */
+.note-card.featured {
+    grid-column: span 2;
+    background: linear-gradient(135deg, rgba(123, 44, 191, 0.1) 0%, rgba(0, 245, 212, 0.05) 100%);
+    border-color: rgba(123, 44, 191, 0.3);
+}
+
+.note-card.featured:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), var(--glow-purple);
+}
+
+/* Note Meta */
+.note-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-4);
+}
+
+.note-category {
+    font-size: var(--text-xs);
+    font-weight: var(--font-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--neon-purple-light);
+    background: rgba(123, 44, 191, 0.2);
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-full);
+}
+
+.note-date {
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+}
+
+/* Note Title */
+.note-title {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+    margin-bottom: var(--space-3);
+    line-height: var(--leading-snug);
+    transition: color var(--transition-fast);
+}
+
+.note-card:hover .note-title {
+    color: var(--neon-cyan);
+}
+
+/* Note Excerpt */
+.note-excerpt {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-4);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Note Footer */
+.note-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--glass-border);
+}
+
+.note-tags {
+    display: flex;
+    gap: var(--space-2);
+}
+
+.tag {
+    font-size: var(--text-xs);
+    color: var(--text-tertiary);
+    background: rgba(255, 255, 255, 0.05);
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-sm);
+}
+
+.read-time {
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+}
+
+/* ========================================
+   Topics Section
+   ======================================== */
+.topics-section {
+    padding: var(--space-20) 0;
+    background: var(--bg-primary);
+}
+
+.topics-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-3);
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.topics-grid.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.6s ease;
+}
+
+/* Topic Pill */
+.topic-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-5);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-full);
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.topic-pill:hover {
+    background: var(--glass-bg-hover);
+    border-color: var(--neon-purple-light);
+    color: var(--text-primary);
+    transform: translateY(-2px);
+}
+
+.topic-pill.active {
+    background: linear-gradient(135deg, rgba(123, 44, 191, 0.3), rgba(0, 245, 212, 0.1));
+    border-color: var(--neon-purple-light);
+    color: var(--text-primary);
+    box-shadow: var(--glow-purple);
+}
+
+.topic-icon {
+    font-size: var(--text-base);
+}
+
+.topic-name {
+    font-weight: var(--font-medium);
+}
+
+.topic-count {
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    background: rgba(255, 255, 255, 0.1);
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-full);
+}
+
+/* ========================================
+   About Flow-Note Section
+   ======================================== */
+.about-flownote {
+    padding: var(--space-16) 0;
+    background: var(--bg-secondary);
+}
+
+.about-content {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-8);
+    padding: var(--space-10);
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.about-content.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.6s ease;
+}
+
+.about-icon {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(123, 44, 191, 0.15);
+    border: 1px solid rgba(123, 44, 191, 0.3);
+    border-radius: var(--radius-xl);
+    color: var(--neon-purple-light);
+}
+
+.about-text h3 {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    margin-bottom: var(--space-4);
+    color: var(--text-primary);
+}
+
+.about-text p {
+    font-size: var(--text-base);
+    color: var(--text-secondary);
+    line-height: var(--leading-relaxed);
+}
+
+.about-text p+p {
+    margin-top: var(--space-3);
+}
+
+.about-text strong {
+    color: var(--neon-purple-light);
+}
+
+/* ========================================
+   Bottom CTA Section
+   ======================================== */
+.bottom-cta {
+    padding: var(--space-32) 0;
+    background: var(--gradient-hero);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.bottom-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--neon-purple-light), transparent);
+}
+
+.cta-content {
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.cta-content.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.6s ease;
+}
+
+.cta-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    background: rgba(123, 44, 191, 0.15);
+    border: 1px solid rgba(123, 44, 191, 0.3);
+    border-radius: 50%;
+    color: var(--neon-purple-light);
+    margin-bottom: var(--space-8);
+    animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.cta-title {
+    font-family: var(--font-display);
+    font-size: var(--text-4xl);
+    font-weight: var(--font-bold);
+    margin-bottom: var(--space-4);
+    line-height: var(--leading-tight);
+}
+
+.cta-subtitle {
+    font-size: var(--text-lg);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-10);
+    line-height: var(--leading-relaxed);
+}
+
+/* Large Subscribe Form */
+.subscribe-form-lg {
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+.subscribe-form-lg .input-wrapper input {
+    padding: var(--space-5) var(--space-5) var(--space-5) var(--space-12);
+    font-size: var(--text-lg);
+}
+
+.subscribe-form-lg .subscribe-btn {
+    padding: var(--space-5) var(--space-8);
+    font-size: var(--text-lg);
+}
+
+/* ========================================
+   Active Navigation State
+   ======================================== */
+.nav-links a.active {
+    color: var(--neon-cyan);
+}
+
+.nav-links a.active::after {
+    width: 100%;
+}
+
+/* ========================================
+   Responsive Design
+   ======================================== */
+@media (max-width: 1024px) {
+    .notes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .note-card.featured {
+        grid-column: span 2;
+    }
+
+    .flownote-title {
+        font-size: var(--text-5xl);
+    }
+}
+
+@media (max-width: 768px) {
+    .flownote-hero {
+        padding: var(--space-24) 0 var(--space-16);
+    }
+
+    .flownote-title {
+        font-size: var(--text-4xl);
+    }
+
+    .flownote-subtitle {
+        font-size: var(--text-lg);
+    }
+
+    .subscribe-form .form-group {
+        flex-direction: column;
+    }
+
+    .subscribe-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero-stats {
+        flex-direction: column;
+        gap: var(--space-4);
+    }
+
+    .stat-divider {
+        width: 60px;
+        height: 1px;
+    }
+
+    .notes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .note-card.featured {
+        grid-column: span 1;
+    }
+
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .cta-title {
+        font-size: var(--text-3xl);
+    }
+
+    .subscribe-form-lg .form-group {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .flownote-title {
+        font-size: var(--text-3xl);
+    }
+
+    .topics-grid {
+        gap: var(--space-2);
+    }
+
+    .topic-pill {
+        padding: var(--space-2) var(--space-4);
+        font-size: var(--text-xs);
+    }
+}

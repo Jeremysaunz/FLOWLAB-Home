@@ -470,23 +470,29 @@
         document.addEventListener('DOMContentLoaded', function () {
             // 구독 버튼들
             document.getElementById('subscribeBtn').href = SUBSTACK_CONFIG.subscribeUrl;
+            document.getElementById('subscribeBtn').target = '_self'; // 현재 탭에서 열기
+
             document.getElementById('subscribeBtnBottom').href = SUBSTACK_CONFIG.subscribeUrl;
+            document.getElementById('subscribeBtnBottom').target = '_self'; // 현재 탭에서 열기
 
             // 아카이브 버튼
             document.getElementById('archiveBtn').href = SUBSTACK_CONFIG.archiveUrl;
+            document.getElementById('archiveBtn').target = '_self'; // 현재 탭에서 열기
+
             document.getElementById('viewAllBtn').href = SUBSTACK_CONFIG.archiveUrl;
+            document.getElementById('viewAllBtn').target = '_self'; // 현재 탭에서 열기
 
             // 노트 카드 링크 (클릭 시 아카이브로 이동)
             document.querySelectorAll('[data-note-link]').forEach(card => {
                 card.href = SUBSTACK_CONFIG.archiveUrl;
-                card.target = '_blank';
+                card.target = '_self';
                 card.rel = 'noopener';
             });
 
             // 토픽 링크 (클릭 시 아카이브로 이동)
             document.querySelectorAll('[data-topic-link]').forEach(link => {
                 link.href = SUBSTACK_CONFIG.archiveUrl;
-                link.target = '_blank';
+                link.target = '_self';
                 link.rel = 'noopener';
             });
         });
